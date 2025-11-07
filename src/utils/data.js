@@ -61,17 +61,17 @@ const getTechStacks = () => ([
   },
     {
     id: 13,
-    img: "/src/assets/tech-stacks/github logo.png",
+    img: "/assets/tech-stacks/github logo.png",
     title: "GitHub"
   },
     {
     id: 14,
-    img: "/src/assets/tech-stacks/postman logo.png",
+    img: "/assets/tech-stacks/postman logo.png",
     title: "Postman"
   },
     {
     id: 15,
-    img: "/src/assets/tech-stacks/figma logo.png",
+    img: "/assets/tech-stacks/figma logo.png",
     title: "Figma"
   },
 ]);
@@ -79,7 +79,7 @@ const getTechStacks = () => ([
 const getAboutPics = () => ([
   {
     id: 1,
-    url: "/src/assets/about-pics/foto.png",
+    url: "/assets/about-pics/foto.png",
     title: "foto 1"
   },
   //   {

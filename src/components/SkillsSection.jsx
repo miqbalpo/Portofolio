@@ -13,7 +13,7 @@ function SkillsSection() {
         ) : (
           getTechStacks().map((item) => (
             <div className="w-48">
-              <img src={item.img} alt={item.img} /><p className="font-semibold text-md sm:text-xl text-center">{item.title}</p>
+              <img src={item.img} alt={item.title} /><p className="font-semibold text-md sm:text-xl text-center">{item.title}</p>
             </div>
           ))
         )}
