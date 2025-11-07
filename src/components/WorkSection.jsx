@@ -9,7 +9,7 @@ function WorkSection() {
       </div>  
       <div className="flex flex-wrap justify-center gap-4">
         <div className="w-[320px] object-contain">
-            <img src="/src/assets/about-pics/magang kalbe.jpg" alt="about" className="m-auto w-64 sm:w-full h-auto object-contain rounded-3xl" />
+            <img src="/assets/about-pics/magang kalbe.jpg" alt="about" className="m-auto w-64 sm:w-full h-auto object-contain rounded-3xl" />
         </div>
         <div className="side-bg"></div>
         <div className="mx-10 w-1/2 gap-x-8">
