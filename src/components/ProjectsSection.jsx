@@ -8,7 +8,7 @@ function ProjectsSection() {
       </div>
       <div className="flex flex-wrap justify-center mt-10 mb-20 sm:mb-5 gap-4">
         <div>
-          <img src="../src/assets/project-mockups/cardion.png" alt="about" className="w-64 h-48 sm:h-96 object-contain" />
+          <img src="/src/assets/project-mockups/cardion.png" alt="about" className="w-64 h-48 sm:h-96 object-contain" />
         </div>
         <div className="relative top-10 w-1/2 gap-x-8">
           <p className="text-3xl sm:text-5xl font-semibold text-center sm:text-right mt-0 mb-5">Cardi-On!</p>
@@ -23,12 +23,12 @@ function ProjectsSection() {
           <p className="mt-5 text-amber-500 font-semibold justify-end"><a href="https://github.com/Alfansya/UBreak" target="https://github.com/Alfansya/UBreak">View code on GitHub &#8594;</a></p>
         </div>
         <div>
-          <img src="../src/assets/project-mockups/ubreak.png" alt="about" className="w-64 h-48 sm:h-96 object-contain" />
+          <img src="/src/assets/project-mockups/ubreak.png" alt="about" className="w-64 h-48 sm:h-96 object-contain" />
         </div>
       </div>
       <div className="flex flex-wrap justify-center mt-10 mb-20 sm:mb-5 gap-4">
         <div>
-          <img src="../src/assets/project-mockups/bukutamu.png" alt="about" className="w-64 h-48 sm:h-96 object-contain" />
+          <img src="/src/assets/project-mockups/bukutamu.png" alt="about" className="w-64 h-48 sm:h-96 object-contain" />
         </div>
         <div className="relative top-10 w-1/2 gap-x-8">
           <p className="text-3xl sm:text-5xl font-semibold text-center sm:text-right mt-0 mb-5">Buku Tamu Digital Kalbe Farma</p>
@@ -43,7 +43,7 @@ function ProjectsSection() {
           <p className="mt-5 text-amber-500 font-semibold justify-end"><a href="https://github.com/miqbalpo/AniMap" target="https://github.com/miqbalpo/AniMap">View code on GitHub &#8594;</a></p>
         </div>
         <div>
-          <img src="../src/assets/project-mockups/animap.png" alt="about" className="w-64 h-48 sm:h-96 object-contain" />
+          <img src="/src/assets/project-mockups/animap.png" alt="about" className="w-64 h-48 sm:h-96 object-contain" />
         </div>
       </div>
     </section>
