@@ -1,0 +1,188 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap');
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #fd9a00;
+  --_m: 
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {to{transform: rotate(1turn)}}
+
+
+*{
+    font-family: "Google Sans Code", monospace;
+}
+
+html{
+  margin: auto;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+section{
+    scroll-margin-top: 64px;
+}
+
+#hero{
+  background-image: url("assets/hero-bg.jpg");
+  background-size: cover;
+  object-fit: fill;
+  color: white;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+#about{
+  margin-top: -5vh;
+}
+
+#skills{
+  background-color: #ffffff;
+  opacity: 1;
+  background-image:  radial-gradient(#48b9ff 2px, transparent 2px), radial-gradient(#48b9ff 2px, #ffffff 2px);
+  background-size: 80px 80px;
+  background-position: 0 0,40px 40px;
+}
+
+#skills img{
+  width: 96px;
+  height: 96px;
+  margin: auto auto 10%;
+  object-fit:contain;
+}
+
+#projects{
+background: #1F2B40;
+background: linear-gradient(180deg, rgba(31, 43, 64, 1) 0%, rgba(2, 6, 24, 1) 100%);
+}
+
+#projects a:hover{
+  text-decoration: underline;
+}
+
+#work{
+  background-color: #ffffff;
+  opacity: 0.5;
+  background-image: radial-gradient(rgba(253, 154, 0, 0.5) 2px, #ffffff 2px);
+  background-size: 40px 40px;
+}
+
+#contact {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+#contact a:hover{
+  color: #fd9a00;
+}
+
+
+
+/* --- Fade-in from bottom animation --- */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.typewriter h1 {
+  overflow: hidden;
+  border-right: .15em solid orange;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  text-shadow: 1px 1px 5px black;
+  animation:
+    typing 3s steps(80, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* For small screens: remove typing animation and only fade in */
+@media (width < 40rem) {
+  .typewriter h1 {
+    border-right: none; /* Remove the caret */
+    animation: fadeIn 1s ease-out forwards;
+  }
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 60% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+/* The fade-in from below effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tailwind custom utilities (optional if you're using Tailwind JIT) */
+@layer utilities {
+  .animate-typing {
+    animation: typing 3s steps(80, end), blink-caret .75s step-end infinite;
+  }
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-out forwards;
+  }
+}
+
+.down-arrow {
+  position: absolute;
+  left: 50%;
+  animation: jumpInfinite 1.5s infinite;
+}
+
+
+@keyframes jumpInfinite {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: 10px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
+
+
+/* Initially hide sections */
+section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* When visible, trigger animation */
+section.show {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
