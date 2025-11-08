@@ -19,7 +19,7 @@ function ContactSection() {
         </ul>
       </div>
       <div className="mx-auto mt-10 sm:mt-20 text-center">
-        <p className="text-sm sm:text-md">Designed & built by yours truly<br/>&#169; miqbalpo, 2025.</p>
+        <p className="text-sm sm:text-md">Designed & built by yours truly<br/>&#169;miqbalpo, 2025.</p>
       </div>
     </section>
   )
