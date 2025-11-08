@@ -19,7 +19,7 @@ function ProjectsSection() {
       <div className="flex sm:flex-row flex-wrap justify-center mt-10 mb-20 sm:mb-5 gap-4 flex-col-reverse items-center">
         <div className="relative top-10 w-1/2 gap-x-8">
           <p className="text-3xl sm:text-5xl font-semibold text-center sm:text-left mt-0 mb-5">UBreak</p>
-          <p className="text-sm sm:text-md  text-justify">UBreak is application made specifically for Brawijaya University that not only assists students in time and task management but also pays special attention to mental health aspects. Combining scheduling elements, reminders, and specific features to check mental health, UBreak is designed to be a loyal companion for students seeking to maintain a balance between academic demands and psychological well-being..</p>
+          <p className="text-sm sm:text-md  text-justify">UBreak is application made specifically for Brawijaya University that not only assists students in time and task management but also pays special attention to mental health aspects. Combining scheduling elements, reminders, and specific features to check mental health, UBreak is designed to be a loyal companion for students seeking to maintain a balance between academic demands and psychological well-being.</p>
           <p className="mt-5 text-amber-500 font-semibold justify-end"><a href="https://github.com/Alfansya/UBreak" target="https://github.com/Alfansya/UBreak">View code on GitHub &#8594;</a></p>
         </div>
         <div>

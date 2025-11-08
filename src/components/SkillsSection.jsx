@@ -3,7 +3,7 @@ import { getTechStacks } from "../utils/data";
 
 function SkillsSection() {
   return (
-    <section id="skills" className="min-h-screen m-auto w-full pb-10">
+    <section id="skills" className="min-h-screen m-auto w-full pb-10 sm:pb-20">
       <div className="h-1/2 align-middle text-center">
         <h1 className="text-3xl sm:text-5xl font-semibold relative mb-10 pt-20 pb-0 sm:pb-10">Tech Stacks</h1>
       </div>
