@@ -6,6 +6,7 @@ import ProjectsSection from './components/ProjectsSection'
 import SkillsSection from './components/SkillsSection'
 import WorkSection from './components/WorkSection'
 import ContactSection from './components/ContactSection'
+import { Analytics } from '@vercel/analytics/react';
 import './App.css'
 
 function App() {
@@ -13,7 +14,6 @@ function App() {
 
   useEffect(() => {
     const waitForResources = async () => {
-      // Wait for all images
       const imagePromises = Array.from(document.images).map(
         (img) =>
           new Promise((resolve) => {
@@ -24,19 +24,15 @@ function App() {
           })
       );
 
-      // Wait for fonts
       const fontPromise = document.fonts ? document.fonts.ready : Promise.resolve();
 
-      // Wait for window load
       const windowLoadPromise = new Promise((resolve) => {
         if (document.readyState === 'complete') resolve();
         else window.addEventListener('load', resolve, { once: true });
       });
 
-      // Wait for all promises
       await Promise.all([windowLoadPromise, fontPromise, ...imagePromises]);
 
-      // Smooth delay
       setTimeout(() => setIsLoading(false), 800);
     };
 
@@ -80,6 +76,7 @@ function App() {
       <ProjectsSection />
       <WorkSection />
       <ContactSection />
+      <Analytics/>
     </>
   );
 }
