@@ -33,7 +33,7 @@ function WorkSection() {
           <ul className="text-sm sm:text-md text-justify list-disc">
             <li>Participating in multiple projects, supporting project planning, coordination, and delivery to ensure milestones were met effectively.</li>
             <li>Implemented the backend for various projects using, focusing on system logic, APIs, and data handling to support scalable applications.</li>
-            <li>Managed server and database configuration for internal web-based systems, ensuring stability, security, and optimal performance..</li>
+            <li>Managed server and database configuration for internal web-based systems, ensuring stability, security, and optimal performance.</li>
           </ul>
         </div>
       </div>
