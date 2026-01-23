@@ -46,6 +46,16 @@ function ProjectsSection() {
           <img src="/assets/project-mockups/animap.png" alt="about" className="w-64 h-48 sm:h-96 object-contain" />
         </div>
       </div>
+      <div className="flex flex-wrap justify-center mt-10 mb-20 sm:mb-5 gap-4">
+        <div>
+          <img src="/assets/project-mockups/wellnest.png" alt="about" className="w-64 h-48 sm:h-96 object-contain" />
+        </div>
+        <div className="relative top-10 w-1/2 gap-x-8">
+          <p className="text-3xl sm:text-5xl font-semibold text-center sm:text-right mt-0 mb-5">Wellnest Festival</p>
+          <p className="text-sm sm:text-md  text-justify">Wellnest Festival is a mobile-oriented website used to promote a health-focused event organized by CNN Indonesia that promotes holistic health education through interactive experiences, inspiring activities, and multi-platform content to improve family health literacy.</p>
+          <p className="mt-5 text-amber-500 font-semibold justify-end"><a href="https://wellnest-festival.cnn.co.id" target="https://wellnest-festival.cnn.co.id">View live website &#8594;</a></p>
+        </div>
+      </div>
     </section>
   )
 }
