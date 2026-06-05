@@ -41,39 +41,44 @@ const getTechStacks = () => ([
   },
     {
     id: 9,
+    img: "/assets/tech-stacks/node js logo.png",
+    title: "Node.js"
+  },
+    {
+    id: 10,
     img: "/assets/tech-stacks/laravel logo.png",
     title: "Laravel"
   },
     {
-    id: 10,
+    id: 11,
     img: "/assets/tech-stacks/mysql logo.jpg",
     title: "MySQL"
   },
     {
-    id: 11,
+    id: 12,
     img: "/assets/tech-stacks/pgsql logo.png",
     title: "PostgreSQL"
   },
     {
-    id: 12,
+    id: 13,
     img: "/assets/tech-stacks/vscode logo.png",
     title: "VSCode"
   },
     {
-    id: 13,
+    id: 14,
     img: "/assets/tech-stacks/github logo.png",
     title: "GitHub"
   },
     {
-    id: 14,
+    id: 15,
     img: "/assets/tech-stacks/postman logo.png",
     title: "Postman"
   },
     {
-    id: 15,
+    id: 16,
     img: "/assets/tech-stacks/figma logo.png",
     title: "Figma"
-  },
+  }
 ]);
 
 const getAboutPics = () => ([

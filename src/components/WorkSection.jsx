@@ -29,7 +29,7 @@ function WorkSection() {
         <div className="side-bg"></div>
         <div className="mx-10 w-1/2 gap-x-8">
           <p className="text-xl sm:text-3xl font-semibold text-center mt-0 mb-5">Software Engineer Intern</p>
-          <p className="text-md sm:text-xl font-semibold text-center mt-0 mb-5">CNN Indonesia - Nov 2025 to Present</p>
+          <p className="text-md sm:text-xl font-semibold text-center mt-0 mb-5">CNN Indonesia - Nov 2025 to May 2026</p>
           <ul className="text-sm sm:text-md text-justify list-disc">
             <li>Participating in multiple projects, supporting project planning, coordination, and delivery to ensure milestones were met effectively.</li>
             <li>Implemented the backend for various projects using, focusing on system logic, APIs, and data handling to support scalable applications.</li>
