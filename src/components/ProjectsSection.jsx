@@ -28,18 +28,18 @@ function ProjectsSection() {
   const project = projects[current];
 
   return (
-    <section id="projects" className="scroll-mt-24 m-auto w-full bg-slate-900 text-white py-10 flex flex-col h-[850px] sm:h-[700px]">
+    <section id="projects" className="scroll-mt-24 m-auto w-full bg-slate-900 text-white py-6 flex flex-col h-[750px] sm:h-[650px]">
       <div className="text-center">
-        <h1 className="text-3xl sm:text-5xl font-semibold mt-5 mb-10 pt-0 sm:pt-10">
+        <h1 className="text-3xl sm:text-5xl font-semibold mt-5 mb-4 pt-0 sm:pt-6">
           Check Out My Projects
         </h1>
       </div>
 
       {/* Card */}
-      <div className="flex items-center justify-center px-4 overflow-hidden" style={{ height: '600px' }}>
+      <div className="flex-1 flex items-center justify-center px-4 overflow-hidden">
         <div
           key={current}
-          className={`project-card-${direction} flex items-center w-full max-w-5xl gap-8 flex-col sm:flex-row justify-center h-full`}
+          className={`project-card-${direction} flex items-center w-full max-w-5xl gap-4 flex-col sm:flex-row justify-center`}
         >
           <div className="flex items-center justify-center shrink-0">
             <img

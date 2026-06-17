@@ -8,7 +8,7 @@ function AboutSection() {
         <SimpleSlider/>
         <div className="w-full sm:w-1/2 px-6">
           <p className="text-3xl sm:text-5xl font-semibold text-center mt-0 mb-5">About Me</p>
-          <p className="text-md sm:text-lg text-justify">I am a Bachelor's Degree of Informatics Engineering from Brawijaya University. With over a year of hands-on experience in web development and still committed to expanding my knowledge, I actively engage in academic studies, enroll in online courses, and participate in industry-related events to enhance my skills. Hardworking, creative, and cooperative person by nature. I am currently seeking opportunities to contribute to innovative projects in software development, especially in software and full-stack web development.</p>
+          <p className="text-md sm:text-lg text-justify">A motivated and adaptable professional with a passion for continuous learning and growth. With a background in fullstack web development and experience working on various technical projects, I have developed strong analytical, problem-solving, and collaboration skills. I am a hardworking, creative, and cooperative individual who enjoys taking on new challenges and contributing to impactful projects while continuously expanding my expertise.</p>
         </div>
       </div>
     </section>
