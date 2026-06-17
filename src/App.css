@@ -173,6 +173,25 @@ background: linear-gradient(180deg, rgba(31, 43, 64, 1) 0%, rgba(2, 6, 24, 1) 10
   }
 }
 
+/* Projects Card Transition Effects*/
+.project-card-right {
+  animation: cardFadeInRight 0.5s ease-out forwards;
+}
+
+.project-card-left {
+  animation: cardFadeInLeft 0.5s ease-out forwards;
+}
+
+@keyframes cardFadeInRight {
+  0% { opacity: 0; transform: translateX(40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes cardFadeInLeft {
+  0% { opacity: 0; transform: translateX(-40px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
 
 /* Initially hide sections */
 section {

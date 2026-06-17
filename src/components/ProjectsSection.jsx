@@ -1,63 +1,105 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { getProjects } from "../utils/data";
 
 function ProjectsSection() {
+  const projects = getProjects();
+  const [current, setCurrent] = useState(0);
+  const [direction, setDirection] = useState("right");
+
+  const prev = () => {
+    setDirection("left");
+    setCurrent((c) => (c - 1 + projects.length) % projects.length);
+  };
+
+  const next = () => {
+    setDirection("right");
+    setCurrent((c) => (c + 1) % projects.length);
+  };
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setDirection("right");
+      setCurrent((c) => (c + 1) % projects.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [current]);
+
+  const project = projects[current];
+  const isOdd = (current + 1) % 2 !== 0;
+
   return (
-    <section id="projects" className="scroll-mt-24 min-h-screen m-auto w-full bg-slate-900 text-white rounded-2xl sm:rounded-4xl py-10">
-      <div className="h-full align-middle text-center">
-        <h1 className="text-3xl sm:text-5xl font-semibold relative mt-5 mb-10 pt-0 sm:pt-10">Check Out My Projects</h1>
+    <section id="projects" className="scroll-mt-24 min-h-full m-auto w-full bg-slate-900 text-white py-10 flex flex-col">
+      <div className="text-center">
+        <h1 className="text-3xl sm:text-5xl font-semibold mt-5 mb-10 pt-0 sm:pt-10">
+          Check Out My Projects
+        </h1>
       </div>
-      <div className="flex flex-wrap justify-center mt-10 mb-20 sm:mb-5 gap-4">
-        <div>
-          <img src="/assets/project-mockups/cardion.png" alt="about" className="w-64 h-48 sm:h-96 object-contain" />
+
+    {/* Card */}
+    <div className="flex-1 flex items-center justify-center px-4">
+      <div
+        key={current}
+        className={`project-card-${direction} flex items-center w-full max-w-5xl gap-8 ${isOdd ? "flex-col" : "flex-col-reverse"} sm:flex-row flex-wrap justify-center`}
+      >
+        <div className="flex items-center justify-center">
+          <img
+            src={project.img}
+            alt={project.title}
+            className="w-64 h-48 sm:h-96 object-contain"
+          />
         </div>
-        <div className="relative top-10 w-1/2 gap-x-8">
-          <p className="text-3xl sm:text-5xl font-semibold text-center sm:text-right mt-0 mb-5">Cardi-On!</p>
-          <p className="text-sm sm:text-md  text-justify">Cardi-On! is an application that makes it easier for its users to place orders or rent sports facilities in their area of residence, such as gyms, soccer fields, tennis courts, etc. Additionally, users can also view the training schedule at the desired sports facility and hire a trainer or companion to help them to do said exercise.</p>
-          <p className="mt-5 text-amber-500 font-semibold justify-end"><a href="https://github.com/miqbalpo/Cardi-On" target="https://github.com/miqbalpo/Cardi-On">View code on GitHub &#8594;</a></p>
-        </div>
-      </div>
-      <div className="flex sm:flex-row flex-wrap justify-center mt-10 mb-20 sm:mb-5 gap-4 flex-col-reverse items-center">
-        <div className="relative top-10 w-1/2 gap-x-8">
-          <p className="text-3xl sm:text-5xl font-semibold text-center sm:text-left mt-0 mb-5">UBreak</p>
-          <p className="text-sm sm:text-md  text-justify">UBreak is application made specifically for Brawijaya University that not only assists students in time and task management but also pays special attention to mental health aspects. Combining scheduling elements, reminders, and specific features to check mental health, UBreak is designed to be a loyal companion for students seeking to maintain a balance between academic demands and psychological well-being.</p>
-          <p className="mt-5 text-amber-500 font-semibold justify-end"><a href="https://github.com/Alfansya/UBreak" target="https://github.com/Alfansya/UBreak">View code on GitHub &#8594;</a></p>
-        </div>
-        <div>
-          <img src="/assets/project-mockups/ubreak.png" alt="about" className="w-64 h-48 sm:h-96 object-contain" />
-        </div>
-      </div>
-      <div className="flex flex-wrap justify-center mt-10 mb-20 sm:mb-5 gap-4">
-        <div>
-          <img src="/assets/project-mockups/bukutamu.png" alt="about" className="w-64 h-48 sm:h-96 object-contain" />
-        </div>
-        <div className="relative top-10 w-1/2 gap-x-8">
-          <p className="text-3xl sm:text-5xl font-semibold text-center sm:text-right mt-0 mb-5">Buku Tamu Digital Kalbe Farma</p>
-          <p className="text-sm sm:text-md text-justify">"Buku Tamu Digital Kalbe Farma" or "Kalbe Farma Digital Guestbook" in English, is an innovative solution developed by PT Kalbe Farma Tbk. to digitize administrative processes related to event organization and guest reception at the company. This application aims to enhance operational efficiency and effectiveness by providing features such as structured event planning, easy guest registration, real-time attendance monitoring, and effective information distribution.</p>
-          <p className="mt-5 text-amber-500 font-semibold justify-end"><a href="https://bukutamu.kalbe.co.id/" target="https://bukutamu.kalbe.co.id/">View live website &#8594;</a></p>
+        <div className="w-full sm:w-1/2 px-6">
+          <p className="text-3xl sm:text-5xl font-semibold text-center sm:text-left mt-0 mb-5">
+            {project.title}
+          </p>
+          <p className="text-sm sm:text-md text-justify">{project.description}</p>
+          <p className="mt-5 text-amber-500 font-semibold">
+            <a href={project.url} target={project.url}>
+              {project.linkLabel} &#8594;
+            </a>
+          </p>
         </div>
       </div>
-      <div className="flex sm:flex-row flex-wrap justify-center mt-10 mb-20 sm:mb-5 gap-4 flex-col-reverse items-center">
-        <div className="relative top-10 w-1/2 gap-x-8">
-          <p className="text-3xl sm:text-5xl font-semibold text-center sm:text-left mt-0 mb-5">AniMap</p>
-          <p className="text-sm sm:text-md  text-justify">AniMap is a web application designed to help users easily find information about anime. On this website, users can search for anime based on specific criteria such as title, genre, rating, and more. After finding an anime they are interested in, users can bookmark it to categorize it however they like based on. One of AniMap’s main advantages is its Content-Based Filtering recommendation feature, which provides personalized anime suggestions based on each user’s preferences.</p>
-          <p className="mt-5 text-amber-500 font-semibold justify-end"><a href="https://github.com/miqbalpo/AniMap" target="https://github.com/miqbalpo/AniMap">View code on GitHub &#8594;</a></p>
+    </div>
+
+      {/* Controls */}
+      <div className="flex items-center justify-center gap-6 mt-8 mb-4">
+        <button
+          onClick={prev}
+          className="w-10 h-10 rounded-full border border-white/30 hover:bg-white/10 transition flex items-center justify-center text-white text-xl"
+        >
+          &#8592;
+        </button>
+
+        {/* Dots */}
+        <div className="flex gap-2">
+          {projects.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                setDirection(i > current ? "right" : "left");
+                setCurrent(i);
+              }}
+              className={`h-2.5 rounded-full transition-all duration-300 ${i === current ? "bg-amber-500 w-5" : "bg-white/30 w-2.5"}`}
+            />
+          ))}
         </div>
-        <div>
-          <img src="/assets/project-mockups/animap.png" alt="about" className="w-64 h-48 sm:h-96 object-contain" />
-        </div>
+
+        <button
+          onClick={next}
+          className="w-10 h-10 rounded-full border border-white/30 hover:bg-white/10 transition flex items-center justify-center text-white text-xl"
+        >
+          &#8594;
+        </button>
       </div>
-      <div className="flex flex-wrap justify-center mt-10 mb-20 sm:mb-5 gap-4">
-        <div>
-          <img src="/assets/project-mockups/wellnest.png" alt="about" className="w-64 h-48 sm:h-96 object-contain" />
-        </div>
-        <div className="relative top-10 w-1/2 gap-x-8">
-          <p className="text-3xl sm:text-5xl font-semibold text-center sm:text-right mt-0 mb-5">Wellnest Festival</p>
-          <p className="text-sm sm:text-md  text-justify">Wellnest Festival is a mobile-oriented website used to promote a health-focused event organized by CNN Indonesia that promotes holistic health education through interactive experiences, inspiring activities, and multi-platform content to improve family health literacy.</p>
-          <p className="mt-5 text-amber-500 font-semibold justify-end"><a href="https://wellnest-festival.cnn.co.id" target="https://wellnest-festival.cnn.co.id">View live website &#8594;</a></p>
-        </div>
-      </div>
+
+      {/* Counter */}
+      <p className="text-center text-white/40 text-sm mb-4">
+        {current + 1} / {projects.length}
+      </p>
     </section>
-  )
+  );
 }
 
-export default ProjectsSection
+export default ProjectsSection;
