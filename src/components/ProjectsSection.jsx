@@ -26,42 +26,41 @@ function ProjectsSection() {
   }, [current]);
 
   const project = projects[current];
-  const isOdd = (current + 1) % 2 !== 0;
 
   return (
-    <section id="projects" className="scroll-mt-24 min-h-full m-auto w-full bg-slate-900 text-white py-10 flex flex-col">
+    <section id="projects" className="scroll-mt-24 m-auto w-full bg-slate-900 text-white py-10 flex flex-col h-[850px] sm:h-[700px]">
       <div className="text-center">
         <h1 className="text-3xl sm:text-5xl font-semibold mt-5 mb-10 pt-0 sm:pt-10">
           Check Out My Projects
         </h1>
       </div>
 
-    {/* Card */}
-    <div className="flex-1 flex items-center justify-center px-4">
-      <div
-        key={current}
-        className={`project-card-${direction} flex items-center w-full max-w-5xl gap-8 ${isOdd ? "flex-col" : "flex-col-reverse"} sm:flex-row flex-wrap justify-center`}
-      >
-        <div className="flex items-center justify-center">
-          <img
-            src={project.img}
-            alt={project.title}
-            className="w-64 h-48 sm:h-96 object-contain"
-          />
-        </div>
-        <div className="w-full sm:w-1/2 px-6">
-          <p className="text-3xl sm:text-5xl font-semibold text-center sm:text-left mt-0 mb-5">
-            {project.title}
-          </p>
-          <p className="text-sm sm:text-md text-justify">{project.description}</p>
-          <p className="mt-5 text-amber-500 font-semibold">
-            <a href={project.url} target={project.url}>
-              {project.linkLabel} &#8594;
-            </a>
-          </p>
+      {/* Card */}
+      <div className="flex items-center justify-center px-4 overflow-hidden" style={{ height: '600px' }}>
+        <div
+          key={current}
+          className={`project-card-${direction} flex items-center w-full max-w-5xl gap-8 flex-col sm:flex-row justify-center h-full`}
+        >
+          <div className="flex items-center justify-center shrink-0">
+            <img
+              src={project.img}
+              alt={project.title}
+              className="w-64 h-48 sm:h-80 object-contain"
+            />
+          </div>
+          <div className="w-full sm:w-1/2 px-6 sm:px-0 overflow-hidden">
+            <p className="text-3xl sm:text-4xl font-semibold text-center sm:text-left mt-0 mb-5">
+              {project.title}
+            </p>
+            <p className="text-sm sm:text-md text-justify line-clamp-5 sm:line-clamp-none">{project.description}</p>
+            <p className="mt-5 text-amber-500 font-semibold">
+              <a href={project.url} target={project.url}>
+                {project.linkLabel} &#8594;
+              </a>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
 
       {/* Controls */}
       <div className="flex items-center justify-center gap-6 mt-8 mb-4">
